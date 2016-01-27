@@ -1,0 +1,23 @@
+<div layout="column" layout-align="center center" class="md-whiteframe-z2" >
+
+  <h1>Iniciar sesión</h1>
+  <md-icon md-svg-icon="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
+
+
+  <form class="form" ng-submit="">
+    <md-input-container layout="column" layout-align="center center" >
+      <label>Usuario</label>
+      <input type="text" ng-model="usuario.nombre">
+    </md-input-container>
+
+    <md-input-container layout="column" layout-align="center center">
+      <label>Contraseña</label>
+      <input type="password" ng-model="usuario.pass">
+    </md-input-container>
+
+			<md-button class="md-raised md-primary"layout-align="center center">Iniciar sesión</md-button>
+
+  </form>
+
+
+</div>

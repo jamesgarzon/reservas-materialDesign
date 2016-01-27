@@ -1,0 +1,24 @@
+<md-list>
+
+
+  <md-subheader class="md-no-sticky">
+
+    <md-input-container layout="column" layout-align="center center">
+      <label>Busqueda</label>
+      <input type="text" ng-model="busqueda">
+    </md-input-container>
+
+  </md-subheader>
+  <md-list-item class="md-3-line" ng-repeat="item in todos | filter:busqueda">
+    <img ng-src="{{item.face}}" class="md-avatar" alt="{{item.who}}" />
+    <div class="md-list-item-text" layout="column" layout-align="left left">
+      <h3>{{ item.nombres }}</h3>
+      <h3>{{item.apellidos}}</h3>
+      <h4>Documento Nro. {{ item.cedula }}</h4>
+      <p>Email: {{ item.email }}</p>
+    </div>
+
+  </md-list-item>
+
+
+</md-list>
