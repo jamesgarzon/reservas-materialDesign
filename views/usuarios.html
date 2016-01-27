@@ -1,24 +1,70 @@
-<md-list>
+<div layout="row" layout-align="left left">
+
+  <div flex="50">
+    <md-list>
 
 
-  <md-subheader class="md-no-sticky">
+      <md-subheader class="md-no-sticky">
 
-    <md-input-container layout="column" layout-align="center center">
-      <label>Busqueda</label>
-      <input type="text" ng-model="busqueda">
+        <md-input-container layout="column" layout-align="center center">
+          <label>Busqueda</label>
+          <input type="text" ng-model="busqueda">
+        </md-input-container>
+
+      </md-subheader>
+
+      <md-list-item class="md-3-line md-whiteframe-z1" ng-repeat="item in todos | filter:busqueda" flex-sm="90">
+        <img ng-src="{{item.face}}" class="md-avatar" alt="{{item.who}}" />
+        <div class="md-list-item-text" layout="column" layout-align="left left">
+          <h3>{{ item.nombres }} {{item.apellidos}}</h3>
+          <h4>Documento Nro. {{ item.cedula }}</h4>
+          <p>Email: {{ item.email }}</p>
+        </div>
+
+      </md-list-item>
+
+
+    </md-list>
+  </div>
+
+
+
+  <div flex="40" flex-offset="5" >
+  <br><br>
+<div layout="column" layout-align="center center" class="md-whiteframe-z2" >
+
+<h1>Nuevo Usuario</h1>
+<form >
+<md-content class="autoScroll">
+    <md-input-container layout="row" layout-align="center center">
+      <label>Cédula</label>
+      <input type="texte" ng-model="nuevoUsuario.cedula">
     </md-input-container>
 
-  </md-subheader>
-  <md-list-item class="md-3-line" ng-repeat="item in todos | filter:busqueda">
-    <img ng-src="{{item.face}}" class="md-avatar" alt="{{item.who}}" />
-    <div class="md-list-item-text" layout="column" layout-align="left left">
-      <h3>{{ item.nombres }}</h3>
-      <h3>{{item.apellidos}}</h3>
-      <h4>Documento Nro. {{ item.cedula }}</h4>
-      <p>Email: {{ item.email }}</p>
-    </div>
+    <md-input-container layout="column" layout-align="center center">
+      <label>Nombres</label>
+      <input type="text" ng-model="nuevoUsuario.nombres">
+    </md-input-container>
 
-  </md-list-item>
+    <md-input-container layout="column" layout-align="center center">
+      <label>Apellidos</label>
+      <input type="text" ng-model="nuevoUsuario.apellidos">
+    </md-input-container>
+
+    <md-input-container layout="column" layout-align="center center">
+      <label>Email</label>
+      <input type="email" ng-model="nuevoUsuario.email">
+    </md-input-container>
+
+    <!-- <md-input-container layout="column" layout-align="center center">
+      <input type="submit" class="md-primary" ng-model="nuevoUsuario.email" value="Registrar">
+    </md-input-container> -->
+
+<md-button class="md-raised md-primary" type="submit">Registrar usuario</md-button>
+  </md-content>
+</form>
 
 
-</md-list>
+  </div>
+</div>
+</div>
